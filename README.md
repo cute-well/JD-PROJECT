@@ -1,16 +1,60 @@
-# React + Vite
+# CareerCanvas AI
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+CareerCanvas AI is a production-ready, local-first web foundation for building premium career planning experiences.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Next.js 15 (App Router)
+- TypeScript
+- Tailwind CSS (v4)
+- shadcn/ui-style component foundation
+- Framer Motion
+- Lucide React
+- React Hook Form + Zod
+- Chart.js
+- html2pdf.js
+- next-themes (dark/light)
 
-## React Compiler
+## Project Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```text
+src/
+  app/                    # App Router entrypoints (layout, page, loading, error, 404)
+  components/
+    layout/               # Navbar, Sidebar, Footer, AppShell
+    loading/              # Reusable loading skeletons
+    providers/            # Global providers (theme)
+    ui/                   # Reusable primitive UI components
+  features/
+    home/                 # Home feature module
+  hooks/                  # Shared hooks
+  lib/                    # Utilities
+  types/                  # Shared types
+```
 
-## Expanding the Oxlint configuration
+## Features Included
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- Glassmorphism-inspired premium UI shell
+- Reusable Navbar, Sidebar, Footer
+- Theme toggle with system/light/dark support
+- Loading skeletons for App Router loading states
+- Custom error boundary page
+- Custom 404 page
+- LocalStorage preference persistence (no backend/database)
+- Chart.js readiness visualization + PDF export with html2pdf.js
+
+## Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+Open `http://localhost:3000`.
+
+## Quality Commands
+
+```bash
+npm run lint
+npm run build
+```
