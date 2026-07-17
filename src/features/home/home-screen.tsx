@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import html2pdf from "html2pdf.js";
 import {
   BarController,
   BarElement,
@@ -91,8 +90,11 @@ export function HomeScreen() {
     [],
   );
 
-  const exportPdf = () => {
+  const exportPdf = async () => {
     if (!cardRef.current) return;
+
+    const { default: html2pdf } = await import("html2pdf.js");
+
     html2pdf(cardRef.current, {
       margin: 0.4,
       filename: "careercanvas-summary.pdf",
