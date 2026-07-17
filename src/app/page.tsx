@@ -1,5 +1,20 @@
-import { HomeScreen } from "@/features/home/home-screen";
+"use client";
+
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+import { getCurrentUser } from "@/lib/auth";
 
 export default function Home() {
-  return <HomeScreen />;
+  const router = useRouter();
+
+  useEffect(() => {
+    if (getCurrentUser()) {
+      router.replace("/dashboard");
+      return;
+    }
+
+    router.replace("/login");
+  }, [router]);
+
+  return null;
 }
